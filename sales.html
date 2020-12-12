@@ -23,17 +23,17 @@
           Enter some information
         </legend>
 
-        <label for="citystorename">Please enter your store name or the city in which it is located</label>
-        <input type="text" name="citystorename">
+        <label for="name">Please enter your store name or the city in which it is located</label>
+        <input type="text" name="name">
 
-        <label for="minimum">What is your minimum customers per hour?</label>
-        <input type="number" name="minimum" min="0" max="99999">
+        <label for="min">What is your minimum customers per hour?</label>
+        <input type="number" name="min" min="0" max="99999">
 
-        <label for="maximum">What is your maximum customers per hour?</label>
-        <input type="number" name="maximum" min="0" max="99999">
+        <label for="max">What is your maximum customers per hour?</label>
+        <input type="number" name="max" min="0" max="99999">
 
         <label for="avg">What is your average sale amount per customer?</label>
-        <input type="number" step=".1" name="average">
+        <input type="number" step=".1" name="avg" min="0" max="99999">
 
         <button type="submit">Send</button>
       </fieldset>
