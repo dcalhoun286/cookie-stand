@@ -39,3 +39,7 @@ footer article a:hover {
   color: black;
   background-color: red;
 }
+
+#salestable {
+  border: 1px black;
+}
