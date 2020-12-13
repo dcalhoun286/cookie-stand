@@ -134,9 +134,17 @@ myForm.addEventListener('submit',
   function handleSubmit(event) {
     event.preventDefault();
     var name = event.target.name.value;
-    var min = event.target.name.value;
-    var max = event.target.name.value;
+    var min = event.target.min.value;
+    var max = event.target.max.value;
     var avg = event.target.avg.value;
+
+    min = parseInt(min);
+    max = parseInt(max);
+    avg = parseInt(avg);
+    // console.log(name);
+    // console.log(min);
+    // console.log(max);
+    // console.log(avg);
 
     var userStore = new Store(name, min, max, avg);
     userStore.render();
