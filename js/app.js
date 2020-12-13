@@ -127,12 +127,13 @@ function renderTableFooter() {
   for (var k = 0; k < hours.length; k++) {
     for (var l = 0; l < stores.length; l++) {
       globalHourlyTotal += stores[l].hourlySales[k];
-      console.log(globalHourlyTotal);
+      // console.log(globalHourlyTotal);
       dailyGlobalSalesTotal += stores[l].hourlySales[k];
     }
     var tfoottdElement = document.createElement('td');
     tfoottdElement.textContent = globalHourlyTotal;
     lasttrElement.appendChild(tfoottdElement);
+    globalHourlyTotal = 0;
   }
 }
 renderTableFooter();
