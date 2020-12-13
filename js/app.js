@@ -87,10 +87,11 @@ Store.prototype.calculateAndPopulateHourlySales = function () {
     tdElement.textContent = this.hourlySales[i];
     //append it to the DOM
     trElement.appendChild(tdElement);
-
-    //append daily store total to DOM
   }
-
+  //append daily store total to DOM
+  var lasttdElement = document.createElement('td');
+  lasttdElement.textContent = this.dailyTotal;
+  trElement.appendChild(lasttdElement);
 };
 
 Store.prototype.render = function() {
@@ -104,7 +105,7 @@ var dubai = new Store('Dubai', 11, 38, 3.7);
 var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 
-seattle.calculateAndPopulateHourlySales();
+seattle.render();
 tokyo.render();
 dubai.render();
 paris.render();
@@ -138,7 +139,6 @@ myForm.addEventListener('submit',
     var avg = event.target.avg.value;
 
     var userStore = new Store(name, min, max, avg);
-    userStore.calculateAndPopulateHourlySales();
     userStore.render();
   }
 );
