@@ -13,6 +13,8 @@ var storeTable = document.getElementById('salestable');
 //global variables
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var stores = [];
+var hourlySales = [];
+// var 
 // var theadElement = document.createElement('thead');
 // var tbodyElement = document.createElement('tbody');
 // var tfootElement = document.createElement('tfoot');
@@ -78,7 +80,7 @@ Store.prototype.calculateAndPopulateHourlySales = function () {
 
   for (var i = 0; i < hours.length; i++) {
     var hourlyTotal = Math.ceil(this.getRandomCustomersPerHour() * this.avg);
-    this.hourlySales[i] = hourlyTotal;
+    this.hourlySales.push(hourlyTotal);
     this.dailyTotal += hourlyTotal;
 
     // create td element
@@ -111,8 +113,29 @@ dubai.render();
 paris.render();
 lima.render();
 
-// function renderFooter() {
-
+function renderTableFooter() {
+  // create table footer and final row
+  var tfootElement = document.getElementById('tfoot');
+  storeTable.appendChild(tfootElement);
+  var lasttrElement = document.createElement('tr');
+  tfootElement.appendChild(lasttrElement);
+  var lastthElement = document.createElement('th');
+  lastthElement.textContent = 'Global';
+  lasttrElement.appendChild(lastthElement);
+  var globalHourlyTotal = 0;
+  var dailyGlobalSalesTotal = 0;
+  for (var k = 0; k < hours.length; k++) {
+    for (var l = 0; l < stores.length; l++) {
+      globalHourlyTotal += stores[l].hourlySales[k];
+      console.log(globalHourlyTotal);
+      dailyGlobalSalesTotal += stores[l].hourlySales[k];
+      var tfoottdElement = document.createElement('td');
+      tfoottdElement.textContent = globalHourlyTotal;
+      lasttrElement.appendChild(tfoottdElement);
+    }
+  }
+}
+renderTableFooter();
 
 // // step 2: add event listener - we pass in two arguments! Event as string, and callback function
 // myForm.addEventListener('submit',
