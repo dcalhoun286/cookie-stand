@@ -1,28 +1,11 @@
 'use strict';
 
-// var salmon = {
-//   title: 'salmon, adult',
-//   src: 'img/salmon.png',
-//   alt: 'photo of salmon',
-//   colors: [],
-// };
-
 // elements from DOM -- lists
 var storeTable = document.getElementById('salestable');
 
 //global variables
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var stores = [];
-var hourlySales = [];
-// var 
-// var theadElement = document.createElement('thead');
-// var tbodyElement = document.createElement('tbody');
-// var tfootElement = document.createElement('tfoot');
-// var thElement = document.createElement('th');
-// var trElement = document.createElement('tr');
-// var tdElement = document.createElement('td');
-
-// var myForm = document.getElementById('form');
 
 var renderHoursRow = function () {
   // create table head
@@ -96,7 +79,7 @@ Store.prototype.calculateAndPopulateHourlySales = function () {
   trElement.appendChild(lasttdElement);
 };
 
-Store.prototype.render = function() {
+Store.prototype.render = function () {
   this.calculateAndPopulateHourlySales();
 };
 
@@ -112,10 +95,11 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+var tfootElement;
 
 function renderTableFooter() {
   // create table footer and final row
-  var tfootElement = document.getElementById('tfoot');
+  tfootElement = document.getElementById('tfoot');
   storeTable.appendChild(tfootElement);
   var lasttrElement = document.createElement('tr');
   tfootElement.appendChild(lasttrElement);
@@ -136,25 +120,11 @@ function renderTableFooter() {
     globalHourlyTotal = 0;
   }
   // total of all totals
-  var tfoottdElement = document.createElement('td');
+  tfoottdElement = document.createElement('td');
   tfoottdElement.textContent = dailyGlobalSalesTotal;
   lasttrElement.appendChild(tfoottdElement);
 }
 renderTableFooter();
-
-// // step 2: add event listener - we pass in two arguments! Event as string, and callback function
-// myForm.addEventListener('submit',
-//   function handleSubmit(event) {
-//     event.preventDefault();
-//     var name = parseInt(event.target.name.value);
-//     var min = parseInt(event.target.min.value);
-//     var max = parseInt(event.target.max.value);
-//     var avg = parseFloat(event.target.avg.value);
-
-//     var userStore = new Store(name, min, max, avg);
-//     userStore.render();
-//   }
-// );
 
 // step 1: get element by id to listen to container
 var myForm = document.getElementById('form');
@@ -176,5 +146,7 @@ myForm.addEventListener('submit',
 
     var userStore = new Store(name, min, max, avg);
     userStore.render();
+    // document.getElementById('salestable').removeChild(tfootElement);
+    // renderTableFooter();
   }
 );
