@@ -46,7 +46,7 @@ var renderHoursRow = function () {
   }
 
   thElement = document.createElement('th');
-  thElement.textContent = 'Total Hours';
+  thElement.textContent = 'Total Sales';
   trElement.appendChild(thElement);
 };
 renderHoursRow();
@@ -135,6 +135,10 @@ function renderTableFooter() {
     lasttrElement.appendChild(tfoottdElement);
     globalHourlyTotal = 0;
   }
+  // total of all totals
+  var tfoottdElement = document.createElement('td');
+  tfoottdElement.textContent = dailyGlobalSalesTotal;
+  lasttrElement.appendChild(tfoottdElement);
 }
 renderTableFooter();
 
