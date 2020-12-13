@@ -129,10 +129,10 @@ function renderTableFooter() {
       globalHourlyTotal += stores[l].hourlySales[k];
       console.log(globalHourlyTotal);
       dailyGlobalSalesTotal += stores[l].hourlySales[k];
-      var tfoottdElement = document.createElement('td');
-      tfoottdElement.textContent = globalHourlyTotal;
-      lasttrElement.appendChild(tfoottdElement);
     }
+    var tfoottdElement = document.createElement('td');
+    tfoottdElement.textContent = globalHourlyTotal;
+    lasttrElement.appendChild(tfoottdElement);
   }
 }
 renderTableFooter();
