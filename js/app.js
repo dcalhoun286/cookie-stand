@@ -129,7 +129,7 @@ lima.render();
 // );
 
 // step 1: get element by id to listen to container
-var myForm = document.getElementById('salesform');
+var myForm = document.getElementById('form');
 myForm.addEventListener('submit',
   function handleSubmit(event) {
     event.preventDefault();
