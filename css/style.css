@@ -1,45 +1,34 @@
 body {
-  color: wheat;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', Verdana, sans-serif;
-  background: url(/img/salmon.png) rgb(102, 54, 48);
+  background-color: rgb(253, 217, 174);
 }
 
+h1 {
+  font-size: 3em;
+  width: 350px;
+  margin: auto;
+}
+
+table {
+  font-family: sans-serif;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+thead, tbody, tfoot {
+  padding: 10px;
+
+}
 footer {
+  background-color: black;
   width: 100%;
   height: 200px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   color: white;
-  font-size: 14px;
-  text-align: justify;
-  background-color: black;
-  margin-bottom: 0px;
-}
-
-footer article {
-  float: left;
-  margin-left: 50px;
-}
-
-footer h3 {
-  opacity: 0.5;
-  margin-top: 5px;
-}
-
-footer article a {
-  color: yellow;
-  text-decoration: none;
-}
-
-footer article a:hover {
-  transition: 350ms;
-  color: black;
-  background-color: red;
-}
-
-#salestable {
-  border: 1px black;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
