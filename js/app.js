@@ -139,14 +139,8 @@ myForm.addEventListener('submit',
     min = parseInt(min);
     max = parseInt(max);
     avg = parseInt(avg);
-    // console.log(name);
-    // console.log(min);
-    // console.log(max);
-    // console.log(avg);
 
     var userStore = new Store(name, min, max, avg);
     userStore.render();
-    // document.getElementById('salestable').removeChild(tfootElement);
-    // renderTableFooter();
   }
 );
